@@ -13,6 +13,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet var tableView:UITableView!
     
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
+    
     var restaurant:Restaurant!
 
     override func viewDidLoad() {
