@@ -210,15 +210,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="tZM-bS-kHp">
                                 <rect key="frame" x="0.0" y="-33" width="600" height="633"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've dined here. What did you think?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-Xt-Y9t">
-                                <rect key="frame" x="153" y="28" width="294" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="ZPo-Ll-1uR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0o-BX-0kz">
                                 <rect key="frame" x="550" y="28" width="30" height="30"/>
                                 <constraints>
@@ -231,8 +222,17 @@
                                     <segue destination="FAc-Sq-qbU" kind="unwind" unwindAction="close:" id="b4b-16-VUo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've dined here. What did you think?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-Xt-Y9t">
+                                <rect key="frame" x="153" y="62" width="294" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="HQE-cE-7sZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XxY-wE-IHz">
-                                <rect key="frame" x="185" y="138" width="230" height="70"/>
+                                <rect key="frame" x="185" y="172" width="230" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doY-7i-SlU" userLabel="dislike">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -307,17 +307,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2kI-Xt-Y9t" firstAttribute="top" secondItem="rcp-KA-m9c" secondAttribute="bottom" constant="42" id="3S2-Oz-KFj"/>
                             <constraint firstItem="tZM-bS-kHp" firstAttribute="bottom" secondItem="WlB-Uc-4vg" secondAttribute="top" id="7nQ-RT-6hm"/>
+                            <constraint firstItem="XxY-wE-IHz" firstAttribute="top" secondItem="2kI-Xt-Y9t" secondAttribute="bottom" constant="28" id="Dgp-8P-YmW"/>
                             <constraint firstItem="tZM-bS-kHp" firstAttribute="leading" secondItem="jUF-B2-ggz" secondAttribute="leading" id="FSG-4n-too"/>
-                            <constraint firstItem="XxY-wE-IHz" firstAttribute="centerX" secondItem="2kI-Xt-Y9t" secondAttribute="centerX" id="OQD-rq-ae4"/>
-                            <constraint firstItem="2kI-Xt-Y9t" firstAttribute="top" secondItem="s0o-BX-0kz" secondAttribute="top" id="Otq-5Q-FFd"/>
                             <constraint firstAttribute="trailing" secondItem="tZM-bS-kHp" secondAttribute="trailing" id="RUl-yn-Ayd"/>
-                            <constraint firstItem="WlB-Uc-4vg" firstAttribute="top" secondItem="XxY-wE-IHz" secondAttribute="bottom" constant="392" id="c9P-hX-iBU"/>
-                            <constraint firstItem="XxY-wE-IHz" firstAttribute="centerX" secondItem="tZM-bS-kHp" secondAttribute="centerX" id="r5s-iJ-ehi"/>
+                            <constraint firstItem="WlB-Uc-4vg" firstAttribute="top" secondItem="XxY-wE-IHz" secondAttribute="bottom" constant="358" id="agy-hu-nTS"/>
+                            <constraint firstItem="XxY-wE-IHz" firstAttribute="centerX" secondItem="tZM-bS-kHp" secondAttribute="centerX" id="gcZ-ri-hs8"/>
                             <constraint firstItem="s0o-BX-0kz" firstAttribute="top" secondItem="rcp-KA-m9c" secondAttribute="bottom" constant="8" id="rad-Fc-kma"/>
-                            <constraint firstItem="XxY-wE-IHz" firstAttribute="top" secondItem="2kI-Xt-Y9t" secondAttribute="bottom" constant="28" id="uBo-P2-B9T"/>
                             <constraint firstItem="s0o-BX-0kz" firstAttribute="trailing" secondItem="jUF-B2-ggz" secondAttribute="trailingMargin" id="x7J-TD-uP9"/>
                             <constraint firstItem="tZM-bS-kHp" firstAttribute="top" secondItem="jUF-B2-ggz" secondAttribute="topMargin" constant="-33" id="xiP-HT-dAX"/>
+                            <constraint firstItem="XxY-wE-IHz" firstAttribute="centerX" secondItem="2kI-Xt-Y9t" secondAttribute="centerX" id="zL9-oQ-Udt"/>
                         </constraints>
                     </view>
                 </viewController>
