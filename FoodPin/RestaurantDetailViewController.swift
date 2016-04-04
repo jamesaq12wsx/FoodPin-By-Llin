@@ -18,6 +18,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         if let ReviewViewController = segue.sourceViewController as? ReviewViewController {
             if let rating = ReviewViewController.rating {
                 ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+                restaurant.rating = rating
             }
         }
     }
@@ -45,6 +46,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Enable self sizing cells
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Set the rating of the restaurant
+        if restaurant.rating != "" {
+            ratingButton.setImage(UIImage(named: restaurant.rating), forState: UIControlState.Normal)
+        }
 
     }
 

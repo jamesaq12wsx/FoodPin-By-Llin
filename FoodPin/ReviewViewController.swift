@@ -16,6 +16,7 @@ class ReviewViewController: UIViewController {
     
     @IBOutlet var ratingStackView:UIStackView!
     
+    //setting rating
     @IBAction func ratingSelected(sender: UIButton) {
         switch (sender.tag) {
         case 100: rating = "dislike"
