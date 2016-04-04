@@ -9,12 +9,17 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var restaurantImageView:UIImageView!
     
+    @IBOutlet var restaurantImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var ratingButton:UIButton!
     
     @IBAction func close(segue:UIStoryboardSegue) {
-        
+        if let ReviewViewController = segue.sourceViewController as? ReviewViewController {
+            if let rating = ReviewViewController.rating {
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+            }
+        }
     }
     
     var restaurant:Restaurant!
