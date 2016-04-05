@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView:MKMapView!
     
@@ -17,6 +17,13 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //顯示指南針
+        mapView.showsCompass = true
+        //比例尺
+        mapView.showsScale = true
+        //顯示交通量大的點
+        mapView.showsTraffic = true
 
         // Do any additional setup after loading the view.
         
@@ -46,6 +53,9 @@ class MapViewController: UIViewController {
                 }
             }
         })
+        
+        //設定mapView delegate
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,14 +64,39 @@ class MapViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyPin"
+        
+        if annotation.isKindOfClass(MKUserLocation) {
+            return nil
+        }
+        
+        //如果可以的話回收使用這個標記
+        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        }
+        
+        let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
+        leftIconView.image = UIImage(named: restaurant.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        
+        //改變大頭針顏色
+        annotationView?.pinTintColor = UIColor.orangeColor()
+        
+        return annotationView
     }
-    */
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//    }
+    
 
 }
