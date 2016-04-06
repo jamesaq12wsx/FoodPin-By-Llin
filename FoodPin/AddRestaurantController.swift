@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AddRestaurantController: UITableViewController {
+class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet var imageView:UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,7 @@ class AddRestaurantController: UITableViewController {
             let photoLibraryActionHandler = { (action:UIAlertAction!) -> () in
                 if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
                     let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .PhotoLibrary
                     
@@ -55,6 +58,7 @@ class AddRestaurantController: UITableViewController {
             let cameraActionHandler = { (action:UIAlertAction!) -> () in
                 if UIImagePickerController.isSourceTypeAvailable(.Camera) {
                     let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .Camera
                     
@@ -78,6 +82,15 @@ class AddRestaurantController: UITableViewController {
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    //挑選完照片自動呼叫此代理
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
