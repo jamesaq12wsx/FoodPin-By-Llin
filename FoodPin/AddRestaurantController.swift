@@ -11,6 +11,15 @@ import UIKit
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var imageView:UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    
+    
+    
+    var isVistied = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +114,43 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func saveNewRestaurant(sender: UIBarButtonItem) {
+        //check all textField
+        if nameTextField.text != "" && typeTextField.text != "" && locationTextField.text != "" {
+            print("Name: \(nameTextField.text)")
+            print("Type: \(typeTextField.text)")
+            print("Location: \(locationTextField.text)")
+            print("Have you been here: \(isVistied)")
+            
+        }
+        else {
+            let newRestaurantAlerController = UIAlertController(title: "Opps", message: "We can't proceed because one of the fields is blank. Please note that all fields ate required", preferredStyle: UIAlertControllerStyle.Alert)
+            newRestaurantAlerController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(newRestaurantAlerController, animated: true, completion: nil)
+            
+            return
+        }
+        
+//        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+        //解除控制器
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //設定yes no 按鈕
+    @IBAction func toggleBeenHereButton(sender: UIButton) {
+        // touch yes button
+        if sender == yesButton {
+            isVistied = true
+            yesButton.backgroundColor = UIColor.redColor()
+            noButton.backgroundColor = UIColor.grayColor()
+        } else if sender == noButton {
+            isVistied  = false
+            noButton.backgroundColor = UIColor.redColor()
+            yesButton.backgroundColor = UIColor.grayColor()
+        }
+    }
+    
     
     
 //     MARK: - Table view data source

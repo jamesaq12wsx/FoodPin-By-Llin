@@ -244,12 +244,18 @@
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="YES"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="lnU-F9-sQy" eventType="touchUpInside" id="2Xz-C0-nYd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7c-Uy-S2T">
                                                     <rect key="frame" x="71" y="37" width="50" height="26"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="NO"/>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="lnU-F9-sQy" eventType="touchUpInside" id="eoQ-sH-Xrw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -281,9 +287,20 @@
                                 <segue destination="nzE-dl-4Y7" kind="unwind" unwindAction="unwindToHomeScreen:" id="EH9-La-Zdj"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Fs-vp-3AI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveNewRestaurant:" destination="lnU-F9-sQy" id="DMT-87-U3V"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="n3r-gZ-Mxw" id="7J5-0c-nu9"/>
+                        <outlet property="locationTextField" destination="wNH-ZO-fOF" id="88J-el-ndy"/>
+                        <outlet property="nameTextField" destination="pY5-lE-cGI" id="WVp-il-6hW"/>
+                        <outlet property="noButton" destination="u7c-Uy-S2T" id="L4b-XN-Ryr"/>
+                        <outlet property="typeTextField" destination="e9v-xZ-pmq" id="68X-46-Dqa"/>
+                        <outlet property="yesButton" destination="12S-9f-TmH" id="PBN-ZU-daa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdj-bM-ivh" userLabel="First Responder" sceneMemberID="firstResponder"/>
