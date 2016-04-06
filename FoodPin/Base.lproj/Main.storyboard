@@ -86,7 +86,13 @@
                             <outlet property="delegate" destination="MJA-dp-dln" id="73F-Xg-Mmm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Pin" id="v6K-YZ-vS6"/>
+                    <navigationItem key="navigationItem" title="Food Pin" id="v6K-YZ-vS6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bod-wt-Kro">
+                            <connections>
+                                <segue destination="sJs-Tk-BOw" kind="presentation" identifier="addRestaurant" id="Ola-6a-wka"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwA-zD-SVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +101,7 @@
         <!--New Restaurant-->
         <scene sceneID="2vZ-bh-t91">
             <objects>
-                <tableViewController id="lnU-F9-sQy" sceneMemberID="viewController">
+                <tableViewController id="lnU-F9-sQy" customClass="AddRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mda-pr-nEF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,11 +278,19 @@
                             <outlet property="delegate" destination="lnU-F9-sQy" id="Ek9-zb-8BU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Restaurant" id="16g-Vq-oix"/>
+                    <navigationItem key="navigationItem" title="New Restaurant" id="16g-Vq-oix">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bhU-4X-x6S">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="nzE-dl-4Y7" kind="unwind" unwindAction="unwindToHomeScreen:" id="EH9-La-Zdj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdj-bM-ivh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nzE-dl-4Y7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2143" y="1022"/>
+            <point key="canvasLocation" x="1772" y="1022"/>
         </scene>
         <!--Restaurant Detail View Controller-->
         <scene sceneID="3c3-qc-tv0">
@@ -428,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N4-jl-VXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="32"/>
+            <point key="canvasLocation" x="2585" y="72"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="DzI-fn-5g0">
@@ -572,7 +586,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQC-Gi-VbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FAc-Sq-qbU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3387" y="879"/>
+            <point key="canvasLocation" x="2585" y="731"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2W-0O-x50">
@@ -608,7 +622,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XnL-ay-Zew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="1022"/>
+            <point key="canvasLocation" x="1094" y="1022"/>
         </scene>
     </scenes>
     <resources>
