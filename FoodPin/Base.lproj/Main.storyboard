@@ -116,15 +116,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-gZ-Mxw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-gZ-Mxw">
                                                     <rect key="frame" x="263" y="88" width="74" height="73"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="74" id="v2L-q9-KsC"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="n3r-gZ-Mxw" firstAttribute="top" secondItem="ZEg-SA-l5K" secondAttribute="topMargin" constant="80" id="IX3-pR-RWx"/>
                                                 <constraint firstItem="n3r-gZ-Mxw" firstAttribute="centerX" secondItem="ZEg-SA-l5K" secondAttribute="centerX" id="Wbf-Qr-NEd"/>
                                                 <constraint firstItem="n3r-gZ-Mxw" firstAttribute="centerY" secondItem="ZEg-SA-l5K" secondAttribute="centerY" id="dBN-gK-ZVh"/>
                                             </constraints>
